@@ -42,29 +42,32 @@ body {
     border-radius: 3px;
   }
   
+  
   button[type="button"] {
     display: block;
-    width: 100%;
+    width: 15%;
     padding: 10px;
     border: none;
     border-radius: 3px;
-    background-color: #4CAF50;
+    background-color: #256c8f;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
   }
   
   button[type="button"]:hover {
-    background-color: #3e8e41;
+    background-color: #345772;
   }
+
 
   .btn-class {
     display: flex;
     justify-content: space-between;
     }
-    
+  
+    /*
     button{
-      width: 600px;
+      width: 300px;
       border: 1px solid #ccc;
       border-radius: 3px;
       padding: 10px;
@@ -72,5 +75,5 @@ body {
       background: #4CAF50;
       color: #fff;
     }
-    
+    */
   

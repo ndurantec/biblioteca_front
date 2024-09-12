@@ -9,27 +9,19 @@
 <body>
 	<h1>Cadastro do Aluno</h1>
 	<form id="cadastrar_aluno">
-		<label for="nome_aluno">Nome do Aluno:</label>
-		<input type="text" id="nome_aluno"><br>
-		<br>
-		<label for="endereco_aluno">Endereço do Aluno:</label>
-		<input type="text" id="endereco_aluno"><br>
-		<br>
-		<label for="email_aluno">E-mail do Aluno:</label>
-		<input type="text" id="email_aluno" ><br>
-		<br>
-		<label for="cgm_aluno">Cgm do Aluno:</label>
-		<input type="text" id="cgm_aluno"><br>
-		<br>
-		<label for="telefone_aluno">Telefone do Aluno:</label>
-		<input type="text" id="telefone_aluno" ><br>
-		<br>
-		<label for="data_nascimento_aluno">Data Nascimento do Aluno:</label>
-		<input type="text" id="data_nascimento_aluno" ><br>
-		<br>
-		<button type="button" id="submit-btn-cadastrar" onclick="cadastrar()">Cadastrar</button>		
-		<!-- <button type="subimit" onclick="executar()">Enviar</button> -->
 		
+		<input type="text" value="Nome:" onfocus="if (this.value == 'Nome:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Nome:';}">
+		
+		<input type="text" value="Endereço:" onfocus="if (this.value == 'Endereço:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Endereço:';}">
+
+		<input type="text" value="E-mail:" onfocus="if (this.value == 'E-mail:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'E-mail:';}">
+
+		<input type="text" value="Cgm:" onfocus="if (this.value == 'Cgm:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Cgm:';}">
+
+		<input type="text" value="Telefone:" onfocus="if (this.value == 'Telefone:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Telefone:';}">
+
+		<input type="text" value="Data de Nascimento:" onfocus="if (this.value == 'Data de Nascimento:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data de Nascimento:';}">
+	
 		<div class="btn-class">
 			<button type="button" id="subimit-btn-salvar" onclick="salvar()">salvar</button>
 			<button type="button" id="subimit-btn-consultar" onclick="consultar()">consultar</button>
@@ -38,6 +30,7 @@
 			
 		 </div>
 	</form>	
+
 	<script src="../asset/style/aluno.css"></script>
 </body>
 </html>
