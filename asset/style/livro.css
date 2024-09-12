@@ -47,7 +47,7 @@ body {
     width: 200%;
     padding: 10px;
     border: none;
-    border-radius: 26px;
+    border-radius: 30px;
     background-color: #4CAF50;
     color: #fff;
     font-weight: bold;
@@ -66,7 +66,7 @@ body {
     button{
       width: 300px;
       border: 1px solid #ccc;
-      border-radius: 666px;
+      border-radius: 3px;
       padding: 10px;
       text-align: center;
       background: #4CAF50;
