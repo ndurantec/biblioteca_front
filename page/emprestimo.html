@@ -7,13 +7,18 @@
 	<link rel="stylesheet" href="../asset/style/emprestimo.css">
 </head>
 <body>
-    <form action="">
 	<h1>Cadastro do Emprestimo</h1>	   
-    <input type="text" value="cgm do aluno:" onfocus="if (this.value == 'Cgm do aluno:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'cgm do aluno:';}">       
-    <input type="text" value="Isbn livro:" onfocus="if (this.value == 'Isbn livro:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Isbn livro:';}">
-    <input type="text" value="Data Emprestimo:" onfocus="if (this.value == 'Data Emprestimo:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data Emprestimo:';}">
-    <input type="text" value="Data da devolução:" onfocus="if (this.value == 'Data da devolução:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data da devolução:';}">
- 
+    <form action="">
+
+		<input type="text" value="cgm do aluno:" onfocus="if (this.value == 'cgm do aluno:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'cgm do aluno:';}">
+
+		<input type="text" value="Isbn livro:" onfocus="if (this.value == 'Isbn livro:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Isbn livro:';}">
+
+		<input type="text" value="Data Emprestimo:" onfocus="if (this.value == 'Data Emprestimo:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data Emprestimo:';}">
+
+		<input type="text" value="Data da devolução:" onfocus="if (this.value == 'Data da devolução:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data da devolução:';}">
+
+	
 		<div class="btn-class">
 			<button type="button" id="subimit-btn-salvar" onclick="salvar()">salvar</button>
 			<button type="button" id="subimit-btn-consultar" onclick="consultar()">consultar</button>
@@ -22,7 +27,7 @@
 			
 		 </div>
 
-	</form>	
+    </form>	
 	<script src="../script/emprestimo.js"></script>
 </body>
 </html>
