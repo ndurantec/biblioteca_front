@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
+  carregarComboLocal();
+});
+
+
+
+
 function salvar() {
   const nome_aluno = document.getElementById(nome_aluno);
     
@@ -8,7 +15,7 @@ function salvar() {
   
   fetch('localhost:8080/aluno/inserir',{
 
-    method: "POST",
+    method: "GET",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
     cache: "no-cache",
     
@@ -59,7 +66,7 @@ function consultar() {
 
   fetch('localhost:8080/aluno/inserir',{
 
-    method: "POST",
+    method: "GET",
     mode: "cors", 
     cache: "no-cache",
     
@@ -109,7 +116,7 @@ function alterar() {
 
   fetch('localhost:8080/aluno/inserir',{
 
-    method: "POST",
+    method: "GET",
     mode: "cors", 
     cache: "no-cache",
       
@@ -158,7 +165,7 @@ function apagar() {
 
   fetch('localhost:8080/aluno/inserir',{
 
-    method: "POST",
+    method: "GET",
     mode: "cors", 
     cache: "no-cache",
                   
@@ -193,3 +200,39 @@ function apagar() {
 }
         
       
+
+
+function carregarComboLocal() {
+ 
+  console.log('Carregou a página e chamou a função');
+
+  var headers = new Headers();    
+  headers.append("Content-Type", "application/json");
+  headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+
+  fetch('http://127.0.0.1:8080/local/findAll' ,{
+
+    method: "GET",
+    mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
+    cache: "no-cache",
+   
+    // Convertendo o objeto JavaScript para JSON
+    // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
+
+    headers: headers
+
+    
+  }).then(response => response.json())
+  .then(data => {
+      const comboBox = document.getElementById('locais');
+      data.forEach(local => {
+          const option = document.createElement('option');
+          option.value = local.id;
+          option.textContent = local.nome;
+          comboBox.appendChild(option);
+      });
+  })
+  .catch(error => console.error('Erro ao carregar locais:', error));
+   
+
+}
