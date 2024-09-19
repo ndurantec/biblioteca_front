@@ -85,4 +85,20 @@ body {
       color: #fff;
     }
     */
+
+    
+  .back-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #0fb600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
   

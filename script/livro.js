@@ -1,7 +1,7 @@
 
-document.addEventListener("DOMContentLoaded", function() {
-  carregarComboLocal();
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//   carregarComboLocal();
+// });
 
 
 
@@ -16,7 +16,7 @@ function salvar() {
   
 fetch(' http://127.0.0.1:8080/livro/insert',{
 
-    method: "GET",
+    method: "POST",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
     cache: "no-cache",
     
@@ -203,7 +203,7 @@ function apagar() {
       
 
 
-function carregarComboLocal() {
+function carregarCombo() {
  
   console.log('Carregou a página e chamou a função');
 
@@ -236,4 +236,16 @@ function carregarComboLocal() {
   .catch(error => console.error('Erro ao carregar locais:', error));
    
 
+}
+
+// //botao de voltar
+// document.addEventListener('DOMContentLoaded', function() {
+//   //const link = document.getElementById('livrobt');
+
+//   // Define o destino do link dinamicamente
+//   link.href = 'home.html'; // Substitua pelo URL da página desejada
+// });
+
+function goBack() {
+  window.history.back();
 }
