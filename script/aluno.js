@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function salvar() {
-  const nome_aluno = document.getElementById(nome_aluno);
+  const nome_aluno = document.getElementById(nom);
     
   
   var headers = new Headers();    
