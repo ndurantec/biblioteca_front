@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Cadastro</title>
+	<title>Cadastro livro</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<link rel="stylesheet" href="../asset/style/livro.css">
 </head>
@@ -10,6 +10,7 @@
 	<h1>Cadastro do Livro</h1>
 	<form id="cadastro_livro">
 
+<<<<<<< HEAD
 	<label for="nome">Nome Do Livro:</label>
 	<input type="text" id="nome"><br>
 	<br>
@@ -21,11 +22,23 @@
 	<label for="anoPublicacao">Ano de Publicação:</label>
 	<input type="text" id="anoPublicacao"><br>
 	<br>
+=======
+ 		<input type="text" value="Nome:" onfocus="if (this.value == 'Nome:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Nome:';}">
+        
+        <input type="text" value="Gênero:" onfocus="if (this.value == 'Gênero:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Gênero:';}">
+
+        <input type="text" value="Ano de Publicação:" onfocus="if (this.value == 'Ano de Publicação:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Ano de Publicação:';}">
+       
+	    <input type="text" value="Isbn:" onfocus="if (this.value == 'Isbn:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Isbn:';}"> 
+
+   		<input type="text" value="Idade Indicativa:" onfocus="if (this.value == 'Idade Indicativa:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Idade Indicativa:';}">
+>>>>>>> 444bba00fe0612438ba61d34c677fe0bbcda3aa7
 
 	<label for="isbn">Isbn Do Livro:</label>
 	<input type="text" id="isbn"><br>
 	<br>
 
+<<<<<<< HEAD
 	<label for="estante">Estante:</label>
 	<input type="text" id="estante"><br>
 	<br>
@@ -47,6 +60,9 @@
    		<!-- <input type="text" value="Idade Indicativa" onfocus="if (this.value == 'Idade Indicativa') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Idade Indicativa';}"> -->
         <!-- <input type="text" value="Estante" onfocus="if (this.value == 'Estante') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Estante';}"> -->
 		<!-- <input type="text" value="Autor do Livro" onfocus="if (this.value == 'Autor do Livro') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Autor do Livroante';}"> -->
+=======
+		<input type="text" value="Autor do Livro:" onfocus="if (this.value == 'Autor do Livro:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Autor do Livro:';}">
+>>>>>>> 444bba00fe0612438ba61d34c677fe0bbcda3aa7
     
 
     <div class="btn-class">
@@ -54,10 +70,18 @@
         <button type="button" id="subimit-btn-salvar" onclick="salvar()">salvar</button>
         <button type="button" id="subimit-btn-consultar" onclick="consultar()">consultar</button>
         <button type="button" id="subimit-btn-alterar" onclick="alterar()">alterar</button>
-        <button type="button" id="subimit-btn-apagar" onclick="pagar()">apagar</button>
+<<<<<<< HEAD
+        <button type="button" id="subimit-btn-apagar" onclick="pagar()">apagar</button>]
+
+		<div class="back-button" id="livrobt" onclick="goBack()">
+			&#8592; Voltar
+		</div>
+=======
+        <button type="button" id="subimit-btn-deletar" onclick="apagar()">apagar</button>
+>>>>>>> 9a130000597ba63a7d261a847bca2624468c9ccc
         
      </div>
 	</form>	
-	<script src="../asset/style/livro.css"></script>
+	<script src="../script/livro.js"></script>
 </body>
 </html>

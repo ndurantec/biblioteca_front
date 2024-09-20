@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>cadastro</title>
+	<title>cadastro aluno</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<link rel="stylesheet" href="../asset/style/aluno.css">
 </head>
@@ -23,14 +23,18 @@
 		<input type="text" value="Data de Nascimento:" onfocus="if (this.value == 'Data de Nascimento:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data de Nascimento:';}">
 	
 		<div class="btn-class">
+
 			<button type="button" id="subimit-btn-salvar" onclick="salvar()">salvar</button>
+
 			<button type="button" id="subimit-btn-consultar" onclick="consultar()">consultar</button>
-			<button type="button" id="subimit-btn-alterar" onclick="alterar()">alterar</button>
-			<button type="button" id="subimit-btn-apagar" onclick="pagar()">apagar</button>
+
+			<button type ="button"id="subimit-btn-alterar" onclick="alterar()">alterar</button>
+
+			<button type="button"id ="subimit-btn-apagar" onclick="apagar()">apagar</button>
 			
 		 </div>
 	</form>	
 
-	<script src="../asset/script/aluno.js"></script>
+	<script src="../script/aluno.js"></script>
 </body>
 </html>

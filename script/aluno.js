@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function salvar() {
-  const nome_aluno = document.getElementById(nome_aluno);
+  const nome_aluno = document.getElementById(nom);
     
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
+  headers.append('Access-Control-Allow-Origin', "*");
   
-  fetch('localhost:8080/aluno/inserir',{
+  fetch('http://127.0.0.1:8080/aluno/inserir',{
 
     method: "GET",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
@@ -62,9 +62,9 @@ function consultar() {
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
+  headers.append('Access-Control-Allow-Origin', "*");
 
-  fetch('localhost:8080/aluno/inserir',{
+  fetch('http://127.0.0.1:8080/aluno/inserir',{
 
     method: "GET",
     mode: "cors", 
@@ -112,9 +112,9 @@ function alterar() {
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
+  headers.append('Access-Control-Allow-Origin', "*");
 
-  fetch('localhost:8080/aluno/inserir',{
+  fetch('http://127.0.0.1:8080/aluno/inserir',{
 
     method: "GET",
     mode: "cors", 
@@ -161,9 +161,9 @@ function apagar() {
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
+  headers.append('Access-Control-Allow-Origin', "*");
 
-  fetch('localhost:8080/aluno/inserir',{
+  fetch('http://127.0.0.1:8080/aluno/inserir',{
 
     method: "GET",
     mode: "cors", 
@@ -208,7 +208,7 @@ function carregarComboLocal() {
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+  headers.append('Access-Control-Allow-Origin', '*');
 
   fetch('http://127.0.0.1:8080/local/findAll') ,{
 

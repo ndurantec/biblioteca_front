@@ -1,0 +1,41 @@
+/* sucesso.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Cor de fundo suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa a altura total da tela */
+}
+
+.success-container {
+    text-align: center;
+    background-color: #fff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    color: #4caf50; /* Verde para o título */
+}
+
+p {
+    color: #555; /* Cinza escuro para o texto */
+}
+
+button {
+    background-color: #4caf50; /* Verde para o botão */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Cantos arredondados no botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049; /* Efeito de hover no botão */
+}
