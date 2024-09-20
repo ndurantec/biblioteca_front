@@ -1,12 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
-  carregarComboLocal();
-});
-
-
-
-
 function salvar() {
-  const nome_aluno = document.getElementById(nom);
+  const nome = document.getElementById(nome);
+  const endereco = document.getElementById(endereco);
+  const email = document.getElementById(email);
+  const cgm = document.getElementById(cgm);
+  const telefone = document.getElementById(telefone);
+  const dataNascimento = document.getElementById(dataNascimento);
     
   
   var headers = new Headers();    
@@ -21,7 +19,7 @@ function salvar() {
     
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
-    body: JSON.stringify({ nome: nome_aluno }),
+    body: JSON.stringify({ nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
 
     headers: headers
 
@@ -57,7 +55,12 @@ function salvar() {
         
     
 function consultar() {
-  const nome_aluno = document.getElementById(nome_aluno);
+  const nome = document.getElementById(nome);
+  const endereco = document.getElementById(endereco);
+  const email = document.getElementById(email);
+  const cgm = document.getElementById(cgm);
+  const telefone = document.getElementById(telefone);
+  const dataNascimento = document.getElementById(dataNascimento);
         
 
   var headers = new Headers();    
@@ -71,7 +74,7 @@ function consultar() {
     cache: "no-cache",
     
     
-    body: JSON.stringify({ nome: nome_aluno }),
+    body: JSON.stringify({nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
 
     headers: headers
 
@@ -107,7 +110,12 @@ function consultar() {
 
   
 function alterar() {
-  const nome_aluno = document.getElementById(nome_aluno);
+  const nome = document.getElementById(nome);
+  const endereco = document.getElementById(endereco);
+  const email = document.getElementById(email);
+  const cgm = document.getElementById(cgm);
+  const telefone = document.getElementById(telefone);
+  const dataNascimento = document.getElementById(dataNascimento);
   
 
   var headers = new Headers();    
@@ -121,7 +129,7 @@ function alterar() {
     cache: "no-cache",
       
       
-    body: JSON.stringify({ nome: nome_aluno }),
+    body: JSON.stringify({nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
 
     headers: headers
 
@@ -156,7 +164,12 @@ function alterar() {
 
         
 function apagar() {
-  const nome_aluno = document.getElementById(nome_aluno);
+  const nome = document.getElementById(nome);
+  const endereco = document.getElementById(endereco);
+  const email = document.getElementById(email);
+  const cgm = document.getElementById(cgm);
+  const telefone = document.getElementById(telefone);
+  const dataNascimento = document.getElementById(dataNascimento);
   
 
   var headers = new Headers();    
@@ -170,7 +183,7 @@ function apagar() {
     cache: "no-cache",
                   
                     
-    body: JSON.stringify({ nome: nome_aluno }),
+    body: JSON.stringify({nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
 
     headers: headers
 
@@ -201,6 +214,8 @@ function apagar() {
         
       
 
+<<<<<<< HEAD
+=======
 
 function carregarComboLocal() {
  
@@ -236,3 +251,4 @@ function carregarComboLocal() {
    
 
 }
+>>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40

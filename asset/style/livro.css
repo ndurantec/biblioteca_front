@@ -90,7 +90,7 @@ body {
   .back-button {
     cursor: pointer;
     padding: 10px 20px;
-    background-color: #0fb600;
+    background-color: #256c8f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -99,6 +99,5 @@ body {
 }
 
 .back-button:hover {
-    background-color: #0056b3;
-}
-  
+    background-color:#345772;
+} 
