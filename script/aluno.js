@@ -213,7 +213,7 @@ function apagar() {
 }
         
       
-
+/*
 <<<<<<< HEAD
 =======
 
@@ -252,3 +252,4 @@ function carregarComboLocal() {
 
 }
 >>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40
+*/

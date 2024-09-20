@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 function salvar() {
     const nome = document.getElementById(nome).value;
     const genero = document.getElementById(genero).value;
@@ -108,7 +108,7 @@ function salvar() {
         
       
   
-  
+  /*
   function alterar() {
     const nome = document.getElementById(nome).value;
     const genero = document.getElementById(genero).value;
@@ -121,41 +121,10 @@ function salvar() {
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "*");
   
-  fetch('http://127.0.0.1:8080/livro',{
+  fetch('http://127.0.0.1:8080/livro' ,{
   
     method: "POST",
-=======
-//document.addEventListener("DOMContentLoaded", function() {
-// carregarCombo();
-//});
 
-
-function salvar() {
-  const nome = document.getElementById(nome).value;
-  const genero = document.getElementById(genero).value;
-  const anoPublicacao = Number (document.getElementById(anoPublicacao)).value;
-  const isbn = document.getElementById(isbn).value;
-  const estante = Number (document.getElementById(estante)).value;
-  const idade_indicativa = Number (document.getElementById(idadeIndiucativa).value)
-  const autor = document.getElementById(autor).value;
-   
-  console.log(nome);
-  console.log(genero);
-  console.log(anoPublicacao);
-  console.log(isbn);
-  console.log(estante);
-  console.log(idadeIndiucativa);
-  console.log(autor);
-  
-  var headers = new Headers();    
-  headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "*");
-fetch(' http://127.0.0.1:8080/livro/insert',{
-
-    method: "POST",
-    mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
-    cache: "no-cache",
-    
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
     body: JSON.stringify({ nome: nome,
@@ -193,7 +162,7 @@ fetch(' http://127.0.0.1:8080/livro/insert',{
       
 }
      
-function consultar() {
+/*function consultar() {
   const genero = document.getElementById(genero);
         
 
@@ -203,13 +172,12 @@ function consultar() {
 
   fetch('http://127.0.0.1:8080/livro/fyndById',{
 
-    method: "GET",
->>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40
-    mode: "cors", 
+   method: "GET",
+      mode: "cors", 
     cache: "no-cache",
     
     
-<<<<<<< HEAD
+    HEAD
     body: JSON.stringify({nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
   
     headers: headers
@@ -289,7 +257,7 @@ function consultar() {
     .catch(error => console.error('Erro!:', error));
                  
   }
-=======
+
     body: JSON.stringify({ genero: genero }),
 
     headers: headers
@@ -441,3 +409,4 @@ function carregarComboLocal() {
 
 }
 >>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40
+*/
