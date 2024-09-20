@@ -1,28 +1,37 @@
-
 document.addEventListener("DOMContentLoaded", function() {
   carregarComboLocal();
 });
 
 
-
-
 function salvar() {
-  const nome_livro = document.getElementById(nome_livro);
+  const nome = document.getElementById(nome).value;
+  const genero = document.getElementById(genero).value;
+  const anoPublicacao = Number (document.getElementById(anoPublicacao)).value;
+  const isbn = document.getElementById(isbn).value;
+  const estante = Number (document.getElementById(estante)).value;
+  const idade_indicativa = Number (document.getElementById(idadeIndiucativa).value)
+  const autor = document.getElementById(autor).value;
+   
     
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
-  
+  headers.append('Access-Control-Allow-Origin', "*");
 fetch(' http://127.0.0.1:8080/livro/insert',{
 
-    method: "GET",
+    method: "POST",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
     cache: "no-cache",
     
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
-    body: JSON.stringify({ nome: nome_livro }),
+    body: JSON.stringify({ nome: nome,
+       genero: genero,
+        anoPublicacao: anoPublicacao,
+         isbn: isbn, 
+         estante: estante,
+         idade: idade_indicativa, 
+         autor: autor}),
 
     headers: headers
 
@@ -58,21 +67,21 @@ fetch(' http://127.0.0.1:8080/livro/insert',{
         
     
 function consultar() {
-  const nome_livro = document.getElementById(nome_livro);
+  const genero = document.getElementById(genero);
         
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
 
-  fetch('http://127.0.0.1:8080/livro/6',{
+  fetch('http://127.0.0.1:8080/livro/fyndById',{
 
     method: "GET",
     mode: "cors", 
     cache: "no-cache",
     
     
-    body: JSON.stringify({ nome: nome_livro }),
+    body: JSON.stringify({ genero: genero }),
 
     headers: headers
 
@@ -108,21 +117,21 @@ function consultar() {
 
   
 function alterar() {
-  const nome_livro= document.getElementById(nome_livro);
+  const anoPublicacao= document.getElementById(anoPublicacao);
   
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
 
-  fetch('http://127.0.0.1:8080/emprestimo/6',{
+  fetch('http://127.0.0.1:8080/livro/update',{
 
-    method: "GET",
+    method: "POST",
     mode: "cors", 
     cache: "no-cache",
       
       
-    body: JSON.stringify({ nome: nome_livro }),
+    body: JSON.stringify({ anoPublicacao: anoPublicacao }),
 
     headers: headers
 
@@ -157,21 +166,21 @@ function alterar() {
 
         
 function apagar() {
-  const nome_livro = document.getElementById(nome_livro);
+  const isbn = document.getElementById(isbn);
   
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
 
-  fetch('http://127.0.0.1:8080/emprestimo/3',{
+  fetch('http://127.0.0.1:8080/livro/delete',{
 
     method: "GET",
     mode: "cors", 
     cache: "no-cache",
                   
                     
-    body: JSON.stringify({ nome: nome_livro }),
+    body: JSON.stringify({ isbn: isbn }),
 
     headers: headers
 
@@ -201,6 +210,11 @@ function apagar() {
 }
         
       
+
+
+
+        
+
 
 
 function carregarComboLocal() {
