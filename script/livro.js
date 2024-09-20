@@ -12,7 +12,13 @@ function salvar() {
   const idade_indicativa = Number (document.getElementById(idadeIndiucativa).value)
   const autor = document.getElementById(autor).value;
    
-    
+  console.log(nome);
+  console.log(genero);
+  console.log(anoPublicacao);
+  console.log(isbn);
+  console.log(estante);
+  console.log(idadeIndiucativa);
+  console.log(autor);
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");

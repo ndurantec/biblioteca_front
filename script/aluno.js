@@ -222,7 +222,7 @@ function carregarComboLocal() {
     headers: headers
 
     
-  }).then(response => response.json())
+  }.then(response => response.json())
   .then(data => {
       const comboBox = document.getElementById('locais');
       data.forEach(local => {

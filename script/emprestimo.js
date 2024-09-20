@@ -7,14 +7,14 @@
 
 
 function salvar() {
-  const nome_emprestimo = document.getElementById(nome_aluno);
+  const nome_emprestimo = document.getElementById(nome_emprestimo);
     
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
   
-  fetch('localhost:8080/emprestimo/inserir',{
+  fetch('insert: http://127.0.0.1:8080/emprestimo/insert',{
 
     method: "GET",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
@@ -62,7 +62,7 @@ function consultar() {
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
 
-  fetch('localhost:8080/aluno/inserir',{
+  fetch('consultar: http://127.0.0.1:8080/emprestimo/5',{
 
     method: "GET",
     mode: "cors", 
@@ -112,7 +112,7 @@ function alterar() {
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
 
-  fetch('localhost:8080/emprestimo/inserir',{
+  fetch('update: http://127.0.0.1:8080/emprestimo/6',{
 
     method: "GET",
     mode: "cors", 
@@ -161,7 +161,7 @@ function apagar() {
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
 
-  fetch('localhost:8080/emprestimo/inserir',{
+  fetch('delete: http://127.0.0.1:8080/emprestimo/3',{
 
     method: "GET",
     mode: "cors", 
