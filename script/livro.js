@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-  carregarComboLocal();
-});
+//document.addEventListener("DOMContentLoaded", function() {
+// carregarCombo();
+//});
 
 
 function salvar() {
@@ -59,13 +59,7 @@ fetch(' http://127.0.0.1:8080/livro/insert',{
          
       
 }
-    
-
-
-
-
-        
-    
+     
 function consultar() {
   const genero = document.getElementById(genero);
         
@@ -109,12 +103,6 @@ function consultar() {
     
       
 }
-        
-      
-
-
-
-
   
 function alterar() {
   const anoPublicacao= document.getElementById(anoPublicacao);
@@ -158,12 +146,6 @@ function alterar() {
   
             
 }
-        
-        
-        
-
-
-
         
 function apagar() {
   const isbn = document.getElementById(isbn);
@@ -209,14 +191,6 @@ function apagar() {
               
 }
         
-      
-
-
-
-        
-
-
-
 function carregarComboLocal() {
  
   console.log('Carregou a página e chamou a função');
