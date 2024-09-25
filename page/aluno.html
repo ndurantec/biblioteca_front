@@ -9,19 +9,40 @@
 <body>
 	<h1>Cadastro do Aluno</h1>
 	<form id="cadastrar_aluno">
-		
+	
+		<!--
 		<input type="text" value="Nome:" onfocus="if (this.value == 'Nome:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Nome:';}">
 		
 		<input type="text" value="Endereço:" onfocus="if (this.value == 'Endereço:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Endereço:';}">
 
 		<input type="text" value="E-mail:" onfocus="if (this.value == 'E-mail:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'E-mail:';}">
 
-		<input type="text" value="Cgm:" onfocus="if (this.value == 'Cgm:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Cgm:';}">
+		<input type="number" value="Cgm:" onfocus="if (this.value == 'Cgm:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Cgm:';}">
 
 		<input type="text" value="Telefone:" onfocus="if (this.value == 'Telefone:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Telefone:';}">
 
 		<input type="text" value="Data de Nascimento:" onfocus="if (this.value == 'Data de Nascimento:') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Data de Nascimento:';}">
-	
+	    -->
+
+		<label for="NomeAluno">Nome:</label>
+		<input type="text" id="nome"><br>
+
+		<label for="enderecoAluno">Endereço:</label>
+		<input type="text" id="endereco"><br>
+
+		<label for="emailAluno">E-mail:</label>
+		<input type="text" id="email"><br>
+
+		<label for="cgmAluno">Cgm:</label>
+		<input type="number" id="cgm"><br>
+
+		<label for="telefoneAluno">Telefone:</label>
+		<input type="text" id="telefone"><br>
+
+		<label for="nascimentoAluno">Data de Nascimento:</label>
+		<input type="text" id="nascimento"><br>
+
+
 		<div class="btn-class">
 
 			<button type="button" id="subimit-btn-salvar" onclick="salvar()">salvar</button>

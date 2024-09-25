@@ -1,25 +1,32 @@
 function salvar() {
-  const nome = document.getElementById(nome);
-  const endereco = document.getElementById(endereco);
-  const email = document.getElementById(email);
-  const cgm = document.getElementById(cgm);
-  const telefone = document.getElementById(telefone);
-  const dataNascimento = document.getElementById(dataNascimento);
+  const nome = document.getElementById('nome').value;
+  const endereco = document.getElementById('endereco').value;
+  const email = document.getElementById('email').value;
+  const cgm = Number(document.getElementById('cgm').value);
+  const telefone = document.getElementById('telefone').value;
+  const dataNascimento = document.getElementById('nascimento').value;
     
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "*");
   
-  fetch('http://127.0.0.1:8080/aluno/inserir',{
+  fetch('http://127.0.0.1:8080/aluno/insert',{
 
-    method: "GET",
+    method: "POST",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
     cache: "no-cache",
     
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
-    body: JSON.stringify({ nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
+    body: JSON.stringify({ nome: nome,
+       endereco: endereco,
+       email: email,
+       cgm: cgm, 
+       telefone,
+       telefone,
+       dataNascimento: dataNascimento
+      }),
 
     headers: headers
 

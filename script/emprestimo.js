@@ -1,28 +1,31 @@
- document.addEventListener("DOMContentLoaded", function() {
-  carregarComboLocal();
-});
-
-
-
-
-
 function salvar() {
-  const nome_emprestimo = document.getElementById(nome_emprestimo);
+  const codigo = Number(document.getElementById('cod').value);
+  const isbn_Emprestimo = document.getElementById('indicador').value;
+  const data_Emprestimo = document.getElementById('emprestimo').value;
+  const data_Entrega = document.getElementById('entrega').value;
     
+  console.log(codigo);
+  console.log(isbn_Emprestimo);
+  console.log(data_Emprestimo);
+  console.log(data_Entrega);
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
+  headers.append('Access-Control-Allow-Origin', "*");
   
-  fetch('insert: http://127.0.0.1:8080/emprestimo/insert',{
-
-    method: "GET",
+  //fetch('http://127.0.0.1:8080/emprestimo/insert',{
+    fetch('http://127.0.0.1:8080/emprestimo/insert',{
+    method: "POST",
     mode: "cors", // Usando 'cors' para permitir a requisição de origem cruzada
     cache: "no-cache",
     
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
-    body: JSON.stringify({ nome: nome_aluno }),
+    body: JSON.stringify({ codigo: codigo,
+      isbnEmprestimo: isbn_Emprestimo,
+      dataEmprestimo: data_Emprestimo,
+      dataDevolucao: data_Entrega
+      }),
 
     headers: headers
 
@@ -35,7 +38,7 @@ function salvar() {
     console.log('Foi no servidor e voltou');
 
     //Esta linha carrega a página sucesso
-    window.location.href = 'sucesso.html'    
+    //window.location.href = 'sucesso.html'    
     } else {
     //Esta linha imprime a mensagem no console
     console.log('Aconteceu algo que não foi possivel salvar');

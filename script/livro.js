@@ -1,16 +1,17 @@
-HEAD
 function salvar() {
-    const nome = document.getElementById(nome).value;
-    const genero = document.getElementById(genero).value;
-    const anoPublicacao = document.getElementById(anoPublicacao).value;
-    const isbn = document.getElementById(isbn).value;
-    const idadeIndicativa = document.getElementById(idadeIndicativa).value;
-    const autor = document.getElementById(autor).value;
+    const nome = document.getElementById('nome').value;
+    const genero = document.getElementById('genero').value;
+    const anoPublicacao = Number(document.getElementById('publicacao').value);
+    const isbn = document.getElementById('isbn').value;
+    const estante = Number(document.getElementById('estante').value);
+    const idadeIndicativa = Number(document.getElementById('idade').value);
+    const autor = document.getElementById('autor').value;
     
     console.log(nome);
     console.log(genero);
     console.log(anoPublicacao);
     console.log(isbn);
+    console.log(estante);
     console.log(idadeIndicativa);
     console.log(autor);
   
@@ -26,7 +27,14 @@ function salvar() {
       
       // Convertendo o objeto JavaScript para JSON
       // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
-      body: JSON.stringify({ nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
+      body: JSON.stringify({ nome: nome,
+         genero: genero,
+         anoPublicacao: anoPublicacao, 
+         isbn: isbn,
+         estante: estante,
+         idadeIndicativa: idadeIndicativa,
+         autor: autor
+        }),
   
   
       headers: headers
