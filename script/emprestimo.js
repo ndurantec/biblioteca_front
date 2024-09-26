@@ -21,10 +21,10 @@ function salvar() {
     
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
-    body: JSON.stringify({ codigo: codigo,
-      isbnEmprestimo: isbn_Emprestimo,
+    body: JSON.stringify({ cgmAluno: codigo,
+      isbnLivro: isbn_Emprestimo,
       dataEmprestimo: data_Emprestimo,
-      dataDevolucao: data_Entrega
+      dataEntrega: data_Entrega
       }),
 
     headers: headers
