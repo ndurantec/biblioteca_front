@@ -42,6 +42,15 @@ body {
     border-radius: 3px;
   }
 
+  fieldset{
+    width: 30%;
+}
+div{
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
   input[type="number"] {
     display: block;
     width: 95%;
@@ -51,7 +60,16 @@ body {
     border-radius: 3px;
   }
   
-  
+  input[type="date"] {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+    
   button[type="submit"] {
     display: block;
     width: 100%;

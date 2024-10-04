@@ -2,31 +2,34 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>emprestimo</title>
+	<title>Empréstimo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<link rel="stylesheet" href="../asset/style/emprestimo.css">
 </head>
 <body>
-	<h1>Cadastro do Emprestimo</h1>	   
+	<h1>Cadastro do Empréstimo</h1>	   
     <form id="cadastrar_emprestimo">
 
 	    <label for="codigo">Cgm do aluno:</label>
-		<input type="number" id="cod"><br>
+		<input type="number" id="codigo"><br>
 
 		<label for="isbn_Emprestimo">Isbn do livro:</label>
-		<input type="text" id="indicador"><br>
-
-		<label for="data_Emprestimo">Data do empréstimo:</label>
-		<input type="text" id="emprestimo"><br>
-
-		<label for="data_Entrega">Data da devolução:</label>
-		<input type="text" id="entrega"><br>
+		<input type="text" id="isbn"><br>
 	
+		<fieldset>
+			<div>
+				<label for="data de emprestimo">Data de empréstimo:</label>
+				<input type="date" name="data de emprestimo" id="data de emprestimo">
+			
+			   <label for="data de devolucao ">Data de Devolução:</label>
+				<input type="date" name="data de devolucao" id="data de devolucao">
+			</fieldset>
+
 		<div class="btn-class">
-			<button type="button" id="subimit-btn-salvar" onclick="salvar()">salvar</button>
-			<button type="button" id="subimit-btn-consultar" onclick="consultar()">consultar</button>
-			<button type="button" id="subimit-btn-alterar" onclick="alterar()">alterar</button>
-			<button type="button" id="subimit-btn-apagar" onclick="apagar()">apagar</button>
+			<button type="button" id="subimit-btn-salvar" onclick="salvar()">Salvar</button>
+			<button type="button" id="subimit-btn-consultar" onclick="consultar()">Consultar</button>
+			<button type="button" id="subimit-btn-alterar" onclick="alterar()">Alterar</button>
+			<button type="button" id="subimit-btn-apagar" onclick="apagar()">Apagar</button>
 		 </div>
     </form>	
 	<script src="../script/emprestimo.js"></script>

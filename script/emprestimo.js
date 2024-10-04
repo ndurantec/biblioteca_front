@@ -1,13 +1,21 @@
+let emprestimos = []; // Array para armazenar os empréstimos
+
 function salvar() {
-  const codigo = Number(document.getElementById('cod').value);
-  const isbn_Emprestimo = document.getElementById('indicador').value;
-  const data_Emprestimo = document.getElementById('emprestimo').value;
-  const data_Entrega = document.getElementById('entrega').value;
+    const codigo = document.getElementById("codigo").value;
+    const isbn = document.getElementById("isbn").value;
+    const dataEmprestimo = document.getElementById("data_emprestimo").value;
+    const dataEntrega = document.getElementById("data_entrega").value;
+
+    const novoEmprestimo = { codigo, isbn, dataEmprestimo, dataEntrega };
+    emprestimos.push(novoEmprestimo);
+
+    alert("Empréstimo salvo com sucesso!");
+    console.log(emprestimos); // Para visualização no console
     
   console.log(codigo);
-  console.log(isbn_Emprestimo);
-  console.log(data_Emprestimo);
-  console.log(data_Entrega);
+  console.log(isbn);
+  console.log(dataEmprestimo);
+  console.log(dataEntrega);
   
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
@@ -22,9 +30,9 @@ function salvar() {
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
     body: JSON.stringify({ cgmAluno: codigo,
-      isbnLivro: isbn_Emprestimo,
-      dataEmprestimo: data_Emprestimo,
-      dataEntrega: data_Entrega
+      isbnLivro: isbn,
+      dataEmprestimo: dataEmprestimo,
+      dataEntrega: dataEntrega
       }),
 
     headers: headers
@@ -58,8 +66,15 @@ function salvar() {
 
     
 function consultar() {
-  const nome_emprestimo = document.getElementById(nome_aluno);
-        
+  const codigo = prompt("Informe o CGM do aluno para consultar:");
+  const emprestimo = emprestimos.find(e => e.codigo === codigo);
+
+  if (emprestimo) {
+      alert(`Empréstimo encontrado:\nCGM: ${emprestimo.codigo}\nISBN: ${emprestimo.isbn}\nData de Empréstimo: ${emprestimo.dataEmprestimo}\nData de Devolução: ${emprestimo.dataEntrega}`);
+  } else {
+      alert("Empréstimo não encontrado.");
+  }
+
 
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
@@ -99,18 +114,30 @@ function consultar() {
   .catch(error => console.error('Erro!:', error));
     
       
-}
-        
+  } 
       
 
 
 
 
   
-function alterar() {
-  const nome_emprestimo = document.getElementById(nome_aluno);
-  
+  function alterar() {
+    const codigo = prompt("Informe o CGM do aluno para alterar:");
+    const emprestimo = emprestimos.find(e => e.codigo === codigo);
 
+    if (emprestimo) {
+        emprestimo.isbn = prompt("Informe o novo ISBN:", emprestimo.isbn) || emprestimo.isbn;
+        emprestimo.dataEmprestimo = prompt("Informe a nova data de empréstimo:", emprestimo.dataEmprestimo) || emprestimo.dataEmprestimo;
+        emprestimo.dataEntrega = prompt("Informe a nova data de devolução:", emprestimo.dataEntrega) || emprestimo.dataEntrega;
+
+        alert("Empréstimo alterado com sucesso!");
+    } else {
+        alert("Empréstimo não encontrado.");
+    }
+
+
+
+  
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
@@ -149,15 +176,19 @@ function alterar() {
   
             
 }
-        
-        
-        
-
-
-
+    
         
 function apagar() {
-  const nome_emprestimo = document.getElementById(nome_aluno);
+  const codigo = prompt("Informe o CGM do aluno para apagar:");
+  const index = emprestimos.findIndex(e => e.codigo === codigo);
+
+  if (index !== -1) {
+      emprestimos.splice(index, 1);
+      alert("Empréstimo apagado com sucesso!");
+  } else {
+      alert("Empréstimo não encontrado.");
+  }
+
   
 
   var headers = new Headers();    
@@ -196,15 +227,8 @@ function apagar() {
   })
 
  .catch(error => console.error('Erro!:', error));
-                 
-              
-}
-        
-      
-
-
-
-
+                            
+}      
 function carregarComboLocal() {
  
   console.log('Carregou a página e chamou a função');
