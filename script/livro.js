@@ -78,7 +78,7 @@ function salvar() {
     headers.append("Content-Type", "application/json");
     headers.append('Access-Control-Allow-Origin', "*");
   
-    fetch('http://127.0.0.1:8080/livro',{
+    fetch('http://127.0.0.1:8080/livro/fyndById',{
   
       method: "POST",
       mode: "cors", 
