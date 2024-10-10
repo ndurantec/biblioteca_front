@@ -1,6 +1,6 @@
 /* Estilos gerais */
 body {
-  background-image: url('../image/fundo.jpg'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('../image/Emprestimo.jpg'); /* Substitua pelo caminho da sua imagem */
   background-size:100%; /* Ajusta a imagem para cobrir todo o fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   margin: 0;
@@ -44,6 +44,10 @@ body {
 
   fieldset{
     width: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+  
+
 }
 div{
    display: flex;
