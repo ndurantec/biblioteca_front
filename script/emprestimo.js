@@ -1,7 +1,7 @@
 
 function salvar() {
     const cgm = Number(document.getElementById("cgm").value);
-    const isbn = document.getElementById("isbn").value;
+    const isbn = document.getElementById("isbn").value; 
     const dataEmprestimo = document.getElementById("dataEmprestimo").value;
     const dataEntrega = document.getElementById("dataEntrega").value;
    
