@@ -71,7 +71,9 @@ function consultar() {
   const emprestimo = emprestimos.find(e => e.codigo === codigo);
 
   if (emprestimo) {
-      alert(`Empréstimo encontrado:\nCGM: ${emprestimo.codigo}\nISBN: ${emprestimo.isbn}\nData de Empréstimo: ${emprestimo.dataEmprestimo}\nData de Devolução: ${emprestimo.dataEntrega}`);
+      alert(`Empréstimo encontrado:\nCGM: ${emprestimo.codigo}\nISBN: 
+        ${emprestimo.isbn}\nData de Empréstimo: 
+        ${emprestimo.dataEmprestimo}\nData de Devolução: ${emprestimo.dataEntrega}`);
   } else {
       alert("Empréstimo não encontrado.");
   }
