@@ -7,6 +7,11 @@ function salvar() {
     const idadeIndicativa = Number(document.getElementById('idade').value);
     const autor = document.getElementById('autor').value;
     
+    if(nome.length>50)  {
+      alert("o nome deve ter no maximo so caracteres");
+      return;
+      }
+
     console.log(nome);
     console.log(genero);
     console.log(anoPublicacao);
@@ -73,6 +78,10 @@ function salvar() {
     const idadeIndicativa = document.getElementById(idadeIndicativa).value;
     const autor = document.getElementById(autor).value;
     
+    if(genero.length>50)  {
+      alert("o nome deve ter no maximo so caracteres");
+      return;
+      }
   
     var headers = new Headers();    
     headers.append("Content-Type", "application/json");

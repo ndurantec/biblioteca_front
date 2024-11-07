@@ -6,7 +6,12 @@ function salvar() {
   const telefone = document.getElementById('telefone').value;
   const dataNascimento = document.getElementById('nascimento').value;
 
-
+   
+  if(nome.length>50)  {
+     alert("o nome deve ter no maximo 50 caracteres");
+    } else {
+      alert("O nome é valido");
+    }
   var headers = new Headers();
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "*");
@@ -63,14 +68,19 @@ function salvar() {
 
 
 function consultar() {
-  const nome = document.getElementById("nome").value;
-  // const endereco = document.getElementById("endereco"); 
-  // const email = document.getElementById("email");
-  // const cgm = document.getElementById("cgm");
-  // const telefone = document.getElementById("telefone");
-  // const dataNascimento = document.getElementById("dataNascimento");
+  const aluno = document.getElementById("nome").value;
+  const endereco = document.getElementById("endereco").value; 
+  const email = document.getElementById("email").value;
+  const cgm = document.getElementById("cgm").value;
+  //const telefone = document.getElementById("telefone");
+  // const dataNascimento = document.getElementById("dataNascimento").value;
 
-  console.log(nome);
+   console.log(aluno);
+   console.log(endereco);
+   console.log(email);
+   console.log(cgm);
+   //console.log(dataNascimento);
+
 
   var headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -85,7 +95,7 @@ function consultar() {
     cache: "no-cache",
 
 
-    body: JSON.stringify({ nome: nome }),
+    body: JSON.stringify({ nome: aluno, endereco: endereco, email: email, cgm: cgm,}),
 
     headers: headers
 
@@ -95,7 +105,7 @@ function consultar() {
     if (response.ok) {
 
 
-      console.log('Foi no servidor e voltou');
+      return response.text();
 
 
      // window.location.href = 'sucesso.html'
