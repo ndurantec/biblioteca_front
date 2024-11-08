@@ -69,16 +69,16 @@ function salvar() {
 
 function consultar() {
   const aluno = document.getElementById("nome").value;
-  const endereco = document.getElementById("endereco").value; 
-  const email = document.getElementById("email").value;
-  const cgm = document.getElementById("cgm").value;
+  // const endereco = document.getElementById("endereco").value; 
+  // const email = document.getElementById("email").value;
+  // const cgm = document.getElementById("cgm").value;
   //const telefone = document.getElementById("telefone");
   // const dataNascimento = document.getElementById("dataNascimento").value;
 
    console.log(aluno);
-   console.log(endereco);
-   console.log(email);
-   console.log(cgm);
+  //  console.log(endereco);
+  //  console.log(email);
+  //  console.log(cgm);
    //console.log(dataNascimento);
 
 
@@ -95,7 +95,7 @@ function consultar() {
     cache: "no-cache",
 
 
-    body: JSON.stringify({ nome: aluno, endereco: endereco, email: email, cgm: cgm,}),
+    body: JSON.stringify({ nome: aluno}),
 
     headers: headers
 
@@ -121,10 +121,11 @@ function consultar() {
   .then(id_aluno => {
 
       console.log("ID do aluno recebido:", id_aluno);
+      
 
       if (id_aluno) {
         localStorage.setItem('id_aluno', id_aluno);
-        alert("Alimento achado com sucesso, agora você pode alterá-lo");
+        alert("Aluno achado com sucesso, agora você pode alterá-lo");
       } else {
         localStorage.setItem('id_aluno', '');
         console.error("Id não encontrado na resposta");
@@ -142,26 +143,31 @@ function consultar() {
 
 
 function alterar() {
-  const nome = document.getElementById("nome");
-  const endereco = document.getElementById("endereco");
-  const email = document.getElementById("email");
-  const cgm = document.getElementById("cgm");
-  const telefone = document.getElementById("telefone");
-  const dataNascimento = document.getElementById("dataNascimento");
+  const aluno = document.getElementById("nome").value;
+  const id = prompt("informe o id do aluno")
+  // const endereco = document.getElementById("endereco");
+  // const email = document.getElementById("email");
+  // const cgm = document.getElementById("cgm");
+  // const telefone = document.getElementById("telefone");
+  // const dataNascimento = document.getElementById("dataNascimento");
 
+  const ID = localStorage.getItem('id_aluno');
+
+  console.log(aluno);
+  console.log(ID);
 
   var headers = new Headers();
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "*");
 
-  fetch('http://127.0.0.1:8080/aluno/inserir', {
+  fetch(`http://127.0.0.1:8080/aluno/${ID}`, {
 
     method: "PUT",
     mode: "cors",
     cache: "no-cache",
 
 
-    body: JSON.stringify({ nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento }),
+    body: JSON.stringify({ nome: aluno, id: id}),
 
     headers: headers
 
@@ -203,12 +209,13 @@ function apagar() {
   const telefone = document.getElementById("telefone");
   const dataNascimento = document.getElementById("dataNascimento");
 
+  const ID = localStorage.getItem('id_aluno');
 
   var headers = new Headers();
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "*");
 
-  fetch('http://127.0.0.1:8080/aluno/inserir', {
+  fetch(`http://127.0.0.1:8080/aluno/${ID}`, {
 
     method: "DELETE",
     mode: "cors",

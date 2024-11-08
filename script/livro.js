@@ -53,7 +53,7 @@ function salvar() {
       console.log('Foi no servidor e voltou');
   
       //Esta linha carrega a página sucesso
-      window.location.href = 'sucesso.html'    
+      //window.location.href = 'sucesso.html'    
     } else {
       //Esta linha imprime a mensagem no console
       console.log('Aconteceu algo que não foi possivel salvar');
@@ -71,30 +71,33 @@ function salvar() {
     
   
   function consultar() {
-    const nome = document.getElementById(nome).value;
-    const genero = document.getElementById(genero).value;
-    const anoPublicacao = document.getElementById(anoPublicacao).value;
-    const isbn = document.getElementById(isbn).value;
-    const idadeIndicativa = document.getElementById(idadeIndicativa).value;
-    const autor = document.getElementById(autor).value;
+    // const nome = document.getElementById(nome).value;
+    // const genero = document.getElementById(genero).value;
+    // const anoPublicacao = document.getElementById(anoPublicacao).value;
+     const livro = document.getElementById("isbn").value;
+    // const idadeIndicativa = document.getElementById(idadeIndicativa).value;
+    // const autor = document.getElementById(autor).value;
+
+    console.log(livro);
     
-    if(genero.length>50)  {
-      alert("o nome deve ter no maximo so caracteres");
-      return;
-      }
+    // if(genero.length>50)  {
+    //   alert("o nome deve ter no maximo so caracteres");
+    //   return;
+    //   }
   
+
     var headers = new Headers();    
     headers.append("Content-Type", "application/json");
     headers.append('Access-Control-Allow-Origin', "*");
   
-    fetch('http://127.0.0.1:8080/livro/fyndById',{
+    fetch('http://127.0.0.1:8080/livro/findByIsbn',{
   
       method: "POST",
       mode: "cors", 
       cache: "no-cache",
       
       
-      body: JSON.stringify({nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
+      body: JSON.stringify({isbn: livro}),
   
       headers: headers
   
@@ -107,7 +110,7 @@ function salvar() {
       console.log('Foi no servidor e voltou');
   
       
-      window.location.href = 'sucesso.html'    
+     // window.location.href = 'sucesso.html'    
     } else {
       
       console.log('Aconteceu algo que não foi possivel salvar');
@@ -125,7 +128,7 @@ function salvar() {
         
       
   
-  /*
+  
   function alterar() {
     const nome = document.getElementById(nome).value;
     const genero = document.getElementById(genero).value;
@@ -138,7 +141,7 @@ function salvar() {
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "*");
   
-  fetch('http://127.0.0.1:8080/livro' ,{
+  fetch(`http://127.0.0.1:8080/${ID}` ,{
   
     method: "POST",
 
@@ -148,8 +151,7 @@ function salvar() {
        genero: genero,
         anoPublicacao: anoPublicacao,
          isbn: isbn, 
-         estante: estante,
-         idade: idade_indicativa, 
+         idade: idadeIndicativa, 
          autor: autor}),
 
     headers: headers
@@ -163,7 +165,7 @@ function salvar() {
     console.log('Foi no servidor e voltou');
 
     //Esta linha carrega a página sucesso
-    window.location.href = 'sucesso.html'    
+   // window.location.href = 'sucesso.html'    
     } else {
     //Esta linha imprime a mensagem no console
     console.log('Aconteceu algo que não foi possivel salvar');
@@ -179,132 +181,61 @@ function salvar() {
       
 }
      
-/*function consultar() {
-  const genero = document.getElementById(genero);
-        
-
-  var headers = new Headers();    
-  headers.append("Content-Type", "application/json");
-  headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
-
-  fetch('http://127.0.0.1:8080/livro/fyndById',{
-
-   method: "GET",
-      mode: "cors", 
-    cache: "no-cache",
-    
-    
-    HEAD
-    body: JSON.stringify({nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
-  
-    headers: headers
-            
-                
-    }).then(response => {
-  
-    if(response.ok) {
-  
-      
-      console.log('Foi no servidor e voltou');
-  
-      
-      window.location.href = 'sucesso.html'    
-    } else {
-      
-      console.log('Aconteceu algo que não foi possivel salvar');
-  
-      
-      throw new Error('Erro ao tentar salvar');
-    }
-  
-  })
-  
-  .catch(error => console.error('Erro!:', error));
-              
-            
-  }
-  
-        
-        
-  
-        
-    function apagar() {
-    const nome = document.getElementById(nome).value;
-    const genero = document.getElementById(genero).value;
-    const anoPublicacao = document.getElementById(anoPublicacao).value;
-    const isbn = document.getElementById(isbn).value;
-    const idadeIndicativa = document.getElementById(idadeIndicativa).value;
-    const autor = document.getElementById(autor).value;
-  
-    var headers = new Headers();    
-    headers.append("Content-Type", "application/json");
-    headers.append('Access-Control-Allow-Origin', "*");
-  
-    fetch('http://127.0.0.1:8080/livro',{
-  
-      method: "POST",
-      mode: "cors", 
-      cache: "no-cache",
-      
-      
-      body: JSON.stringify({nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
-  
-      headers: headers
-  
-      
-    }).then(response => {
-  
-    if(response.ok) {
-  
-      
-      console.log('Foi no servidor e voltou');
-  
-      
-      window.location.href = 'sucesso.html'    
-    } else {
-      
-      console.log('Aconteceu algo que não foi possivel salvar');
-  
-      
-      throw new Error('Erro ao tentar salvar');
-    }
-  
-  })
-  
-    .catch(error => console.error('Erro!:', error));
-                 
-  }
-
-    body: JSON.stringify({ genero: genero }),
-
-    headers: headers
-
-  
-   }).then(response => {
-
-    if(response.ok) {
 
         
+        
+function deletar() {
+        
+const nome = document.getElementById("nome");
+const endereco = document.getElementById("endereco");
+const email = document.getElementById("email");
+const cgm = document.getElementById("cgm");
+const telefone = document.getElementById("telefone");
+const dataNascimento = document.getElementById("dataNascimento");
+
+const ID = localStorage.getItem('id_aluno');
+
+var headers = new Headers();
+headers.append("Content-Type", "application/json");
+headers.append('Access-Control-Allow-Origin', "*");
+
+fetch(`http://127.0.0.1:8080/aluno/${ID}`, {
+
+  method: "DELETE",
+  mode: "cors",
+  cache: "no-cache",
+
+
+  body: JSON.stringify({ nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento }),
+
+  headers: headers
+
+
+}).then(response => {
+
+  if (response.ok) {
+
+
     console.log('Foi no servidor e voltou');
 
-    
-    window.location.href = 'sucesso.html'    
+
+   // window.location.href = 'sucesso.html'
   } else {
-    
+
     console.log('Aconteceu algo que não foi possivel salvar');
 
-    
+
     throw new Error('Erro ao tentar salvar');
   }
 
-   })
+})
 
   .catch(error => console.error('Erro!:', error));
-    
-      
+
+
 }
   
-function alterar() {
+/*function alterar() {
   const anoPublicacao= document.getElementById(anoPublicacao);
   
 
@@ -390,7 +321,7 @@ function apagar() {
                  
               
 }
-        
+ */       
 function carregarComboLocal() {
  
   console.log('Carregou a página e chamou a função');
@@ -425,5 +356,5 @@ function carregarComboLocal() {
    
 
 }
->>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40
-*/
+// >>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40
+// */
