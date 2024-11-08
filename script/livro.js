@@ -161,12 +161,12 @@ function salvar() {
         
       
   function apagar() {
-    const nome = document.getElementById(nome);
-    const endereco = document.getElementById(endereco);
-    const email = document.getElementById(email);
-    const cgm = document.getElementById(cgm);
-    const telefone = document.getElementById(telefone);
-    const dataNascimento = document.getElementById(dataNascimento);
+    const nome = document.getElementById(nome).value;
+    const genero = document.getElementById(genero).value;
+    const anoPublicacao = document.getElementById(anoPublicacao).value;
+    const isbn = document.getElementById(isbn).value;
+    const idadeIndicativa = document.getElementById(idadeIndicativa).value;
+    const autor = document.getElementById(autor).value;
     
   
 <<<<<<< HEAD
@@ -183,8 +183,7 @@ function salvar() {
       cache: "no-cache",
                     
                       
-      body: JSON.stringify({nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
-  
+      body: JSON.stringify({nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
       headers: headers
   
     
@@ -352,10 +351,8 @@ fetch(`http://127.0.0.1:8080/aluno/${ID}`, {
 
 
 
-/*function consultar() {
-  const genero = document.getElementById(genero);
-        
 
+<<<<<<< HEAD
   var headers = new Headers();    
   headers.append("Content-Type", "application/json");
   headers.append('Access-Control-Allow-Origin', "http://127.0.0.1:5500");
@@ -531,5 +528,7 @@ function carregarComboLocal() {
 =======
 >>>>>>> 9d2edb511b8acf7ee495d208621dde140154ae40
 */
+=======
+>>>>>>> a4d35ddc295737be3532758a3d7b999ab3a11587
 
 >>>>>>> 11e706e4190a3ad327f2c0ae8bd19c05576f4724
