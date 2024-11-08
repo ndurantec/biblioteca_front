@@ -131,12 +131,12 @@ function salvar() {
         
       
   function apagar() {
-    const nome = document.getElementById(nome);
-    const endereco = document.getElementById(endereco);
-    const email = document.getElementById(email);
-    const cgm = document.getElementById(cgm);
-    const telefone = document.getElementById(telefone);
-    const dataNascimento = document.getElementById(dataNascimento);
+    const nome = document.getElementById(nome).value;
+    const genero = document.getElementById(genero).value;
+    const anoPublicacao = document.getElementById(anoPublicacao).value;
+    const isbn = document.getElementById(isbn).value;
+    const idadeIndicativa = document.getElementById(idadeIndicativa).value;
+    const autor = document.getElementById(autor).value;
     
   
     var headers = new Headers();    
@@ -150,8 +150,7 @@ function salvar() {
       cache: "no-cache",
                     
                       
-      body: JSON.stringify({nome: nome, endereco: endereco, email: email, cgm: cgm, telefone, telefone, dataNascimento: dataNascimento}),
-  
+      body: JSON.stringify({nome: nome, genero: genero, anoPublicacao: anoPublicacao, isbn: isbn, idadeIndicativa: idadeIndicativa, autor: autor}),
       headers: headers
   
     
