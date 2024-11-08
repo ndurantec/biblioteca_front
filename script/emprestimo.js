@@ -1,18 +1,12 @@
-let emprestimos = []; // Array para armazenar os empréstimos
 
 function salvar() {
-    const codigo = Number(document.getElementById("codigo").value);
-    const isbn = document.getElementById("isbn").value;
+    const cgm = Number(document.getElementById("cgm").value);
+    const isbn = document.getElementById("isbn").value; 
     const dataEmprestimo = document.getElementById("dataEmprestimo").value;
     const dataEntrega = document.getElementById("dataEntrega").value;
-
-    const novoEmprestimo = { codigo, isbn, dataEmprestimo, dataEntrega };
-    emprestimos.push(novoEmprestimo);
-
-    //alert("Empréstimo salvo com sucesso!");
-    console.log(emprestimos); // Para visualização no console
+   
     
-  console.log(codigo);
+  console.log(cgm);
   console.log(isbn);
   console.log(dataEmprestimo);
   console.log(dataEntrega);
@@ -30,7 +24,7 @@ function salvar() {
     // Convertendo o objeto JavaScript para JSON
     // Esta parte é importante onde você deve passar os parametros (dados) da sua tela
     body: JSON.stringify({ 
-      cgmAluno: codigo,
+      cgmAluno: cgm,
       isbnLivro: isbn,
       dataEmprestimo: dataEmprestimo,
       dataEntrega: dataEntrega
@@ -47,7 +41,7 @@ function salvar() {
     console.log('Foi no servidor e voltou');
 
     //Esta linha carrega a página sucesso
-    //window.location.href = 'sucesso.html'    
+    window.location.href = 'sucesso.html'    
     } else {
     //Esta linha imprime a mensagem no console
     console.log('Aconteceu algo que não foi possivel salvar');
