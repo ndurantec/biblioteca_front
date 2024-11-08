@@ -35,36 +35,39 @@ function salvar() {
     }),
 
     headers: headers
-
+     
     //Aqui inicia função then
   }).then(response => {
-
-    if (response.ok) {
-
-      //Esta linha imprime a mensagem no concole
-      console.log('Foi no servidor e voltou');
-
-      //Esta linha carrega a página sucesso
-      window.location.href = 'sucesso.html'
+    if(response.ok) {
+      return response.json(); //transforma a resposta em JSON
     } else {
       //Esta linha imprime a mensagem no console
       console.log('Aconteceu algo que não foi possivel salvar');
-
       //Esta linha imprime a mensagem de erro
       throw new Error('Erro ao tentar salvar');
     }
 
   })
-    //Aqui será executado caso a then não seja chamado
-    .catch(error => console.error('Erro!:', error));
+  .then(data => {
+    //aqui você pode acessar o 'id' retornado do back end
+    const id_emprestimo = data.id;
+    console.log('ID do registro salvo:', id_emprestimo);
 
+    //se quiser armazenar o ID no localStorage
+    localStorage.setItem('id_emprestimo', id_emprestimo);
 
-}
+      console.log('Foi no servidor e voltou');
 
+      //Esta linha carrega a página sucesso
+      // window.location.href = 'sucesso.html'    
 
+  })
+  //Aqui será executado caso a then não seja chamado
+  .catch(error => console.error('Erro!:', error));
+        
+    
 
-
-
+  }
 
 
 function consultar() {
@@ -99,42 +102,36 @@ function consultar() {
 
     headers: headers
 
-
+    //Aqui inicia função then
   }).then(response => {
-
-    if (response.ok) {
-
-
-      return response.text();
-
-
-     // window.location.href = 'sucesso.html'
+    if(response.ok) {
+      return response.json(); //transforma a resposta em JSON
     } else {
-
-      console.log('Aconteceu algo que não foi possivel consultar');
-
-
-      throw new Error('Erro ao consultar');
+      //Esta linha imprime a mensagem no console
+      console.log('Aconteceu algo que não foi possivel salvar');
+      //Esta linha imprime a mensagem de erro
+      throw new Error('Erro ao tentar salvar');
     }
 
   })
-  .then(id_aluno => {
+  .then(data => {
+    //aqui você pode acessar o 'id' retornado do back end
+    const id_emprestimo = data.id;
+    console.log('ID do registro salvo:', id_emprestimo);
 
-      console.log("ID do aluno recebido:", id_aluno);
-      
+    //se quiser armazenar o ID no localStorage
+    localStorage.setItem('id_emprestimo', id_emprestimo);
 
-      if (id_aluno) {
-        localStorage.setItem('id_aluno', id_aluno);
-        alert("Aluno achado com sucesso, agora você pode alterá-lo");
-      } else {
-        localStorage.setItem('id_aluno', '');
-        console.error("Id não encontrado na resposta");
-      }
-    })
-    .catch(error => {
-      console.error("Erro capturado no catch", error);
-    });
-}
+      console.log('Foi no servidor e voltou');
+
+      //Esta linha carrega a página sucesso
+      // window.location.href = 'sucesso.html'    
+
+  })
+  //Aqui será executado caso a then não seja chamado
+  .catch(error => console.error('Erro!:', error));
+        
+  }
 
 
 
@@ -171,29 +168,36 @@ function alterar() {
 
     headers: headers
 
-
+    //Aqui inicia função then
   }).then(response => {
+    if(response.ok) {
+      return response.json(); //transforma a resposta em JSON
+    } else {
+      //Esta linha imprime a mensagem no console
+      console.log('Aconteceu algo que não foi possivel salvar');
+      //Esta linha imprime a mensagem de erro
+      throw new Error('Erro ao tentar salvar');
+    }
 
-    if (response.ok) {
+  })
+  .then(data => {
+    //aqui você pode acessar o 'id' retornado do back end
+    const id_emprestimo = data.id;
+    console.log('ID do registro salvo:', id_emprestimo);
 
+    //se quiser armazenar o ID no localStorage
+    localStorage.setItem('id_emprestimo', id_emprestimo);
 
       console.log('Foi no servidor e voltou');
 
+      //Esta linha carrega a página sucesso
+      // window.location.href = 'sucesso.html'    
 
-      window.location.href = 'sucesso.html'
-    } else {
-
-      console.log('Aconteceu algo que não foi possivel salvar');
-
-
-      throw new Error('Erro ao tentar salvar');
-    }
   })
-
-    .catch(error => console.error('Erro!:', error));
-
-
-}
+  //Aqui será executado caso a then não seja chamado
+  .catch(error => console.error('Erro!:', error));
+      
+  }
 
 
 
@@ -226,27 +230,33 @@ function apagar() {
 
     headers: headers
 
-
+  //Aqui inicia função then
   }).then(response => {
-
-    if (response.ok) {
-
-
-      console.log('Foi no servidor e voltou');
-
-
-      window.location.href = 'sucesso.html'
+    if(response.ok) {
+      return response.json(); //transforma a resposta em JSON
     } else {
-
+      //Esta linha imprime a mensagem no console
       console.log('Aconteceu algo que não foi possivel salvar');
-
-
+      //Esta linha imprime a mensagem de erro
       throw new Error('Erro ao tentar salvar');
     }
 
   })
+  .then(data => {
+    //aqui você pode acessar o 'id' retornado do back end
+    const id_emprestimo = data.id;
+    console.log('ID do registro salvo:', id_emprestimo);
 
-    .catch(error => console.error('Erro!:', error));
+    //se quiser armazenar o ID no localStorage
+    localStorage.setItem('id_emprestimo', id_emprestimo);
 
+      console.log('Foi no servidor e voltou');
 
+      //Esta linha carrega a página sucesso
+      // window.location.href = 'sucesso.html'    
+
+  })
+  //Aqui será executado caso a then não seja chamado
+  .catch(error => console.error('Erro!:', error));
+      
 }
